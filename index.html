@@ -44,7 +44,7 @@
                     changeDown:function () {
                         this.now++;
                         if(this.now==this.myData.length){
-                            this.now=-1;
+                            this.now=0;
                         }
                         this.t1=this.myData[this.now];
                     },
@@ -62,7 +62,7 @@
 </head>
 <body>
 <div id="box">
-    <input type="text" v-model="t1" @keyup="get($event)" @keydown.down="changeDown)" @keydown.up.prevent="changeUp()">
+    <input type="text" v-model="t1" @keyup="get($event)" @keydown.down="changeDown()" @keydown.up.prevent="changeUp()">
     <ul>
         <li v-for="item in myData" :class="{gray:$index==now}">{{item}}</li>
     </ul>

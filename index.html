@@ -1,73 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SearchDemo</title>
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/vue.js"></script>
-    <script type="text/javascript" src="js/vue-resource.js"></script>
-    <style>
-        li{
-            list-style: none;
-            width: 500px;
-        }
-        .gray{
-            background-color: #515356;
-            color: #ffffff;
-        }
-    </style>
-    <script>
-        window.onload=function () {
-            new Vue({
-                el:"body",
-                data:{
-                    t1:"",
-                    myData:[],
-                    now:-1
-                },
-                methods:{
-                    get:function (ev) {
-                        if(ev.keyCode==38||ev.keyCode==40)
-                            return;
-                        if(ev.keyCode==13){
-                            window.open("https://www.so.com/s?src=srp&fr=none&q="+this.t1);
-                            this.t1="";
-                        }
-                        this.$http.jsonp("https://sug.so.360.cn/suggest?",{word:this.t1}).then(function (res) {
-                            this.myData=res.data.s;
-                        },function (res) {
-                            alert(res.status);
-                        });
-                    },
-                    changeDown:function () {
-                        this.now++;
-                        if(this.now==this.myData.length){
-                            this.now=0;
-                        }
-                        this.t1=this.myData[this.now];
-                    },
-                    changeUp:function () {
-                        this.now--;
-                        if(this.now==-2){
-                            this.now=this.myData.length-1;
-                        }
-                        this.t1=this.myData[this.now];
-                    }
-                }
-            });
-        }
-    </script>
-</head>
-<body>
-<div id="box">
-    <input type="text" v-model="t1" @keyup="get($event)" @keydown.down="changeDown()" @keydown.up.prevent="changeUp()">
-    <ul>
-        <li v-for="item in myData" :class="{gray:$index==now}">{{item}}</li>
-    </ul>
-    <!--<p v-show="myData.length==0">暂无数据</p>-->
-</div>
-
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>y</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+  </body>
 </html>

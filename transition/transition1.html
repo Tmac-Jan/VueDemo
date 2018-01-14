@@ -40,8 +40,23 @@
         show:false
       },
       methods:{
+        beforeEnter(el){
+          console.log('动画enter之前');
+        },
         enter(el){
-          console.log("ss");
+          console.log('动画enter');
+        },
+        afterEnter(el){
+          console.log('动画进入之后');
+        },
+        beforeLeave(){
+          console.log('动画leave之前');
+        },
+        leave(){
+          console.log('动画leave');
+        },
+        afterLeave(){
+          console.log('动画leave之后');
         }
       }
     });
@@ -50,8 +65,16 @@
 </head>
 <body>
 <div id="box">
-  <input type="button" value="点击" @click="show=!show">//点击显示或隐藏元素
-  <transition name="fade">//动画组件 里面只可包含一个元素
+  <input type="button" value="点击" @click="show=!show"><!--点击显示或隐藏元素-->
+  <transition name="fade"
+              @before-enter="beforeEnter"
+              @enter="enter"
+              @after-enter="afterEnter"
+
+              @before-leave="beforeLeave"
+              @leave="leave"
+              @after-leave="afterLeave"
+  ><!--动画组件 里面只可包含一个元素-->
     <p v-show="show"></p>
   </transition>
 </div>

@@ -2,19 +2,22 @@
 ## 基本用法：
 ### 单元素
     <transition>
-        要移动的元素(只可以一个元素)
+        要移动的元素(只可以有一个元素)
     </transition>
-
+[单元素demo](https://github.com/tozlam/VueDemo/blob/master/transition/transition1.html)
 ### 多元素
     <transition-group>
-        元素列表
+        要移动的元素（元素列表）
     </transition-group>
+ [多元素demo](https://github.com/tozlam/VueDemo/blob/master/transition/transition-group.html)
 ## 类的定义
- .fade-enter{}:定义进入过渡的开始状态。在元素被插入时生效，在下一个帧移除
+在HTML的transition便签中添加属性name="fade"
+
+ .fade-enter{}: 定义进入过渡的开始状态。在元素被插入时生效，在下一个帧移除
  
  .fade-enter-active{}：定义过渡的状态,即当元素完全显示时的效果。在元素整个过渡过程中作用。这个类可以被用来定义过渡的过程时间，延迟和曲线函数。
        
-.fade-leave{}：: 定义离开过渡的开始状态。在离开过渡被触发时生效，在下一个帧移除
+.fade-leave{}：定义离开过渡的开始状态。在离开过渡被触发时生效，在下一个帧移除
 
  .fade-leave-active{}：定义过渡的状态，即当元素完全消失时的效果。在元素整个过渡过程中作用。这个类可以被用来定义过渡的过程时间，延迟和曲线函数。
  
@@ -35,7 +38,7 @@
      <p v-show="show">
      </transition>
      
-JS:
+JavaScript:
    
     <script>
         new Vue({
@@ -72,15 +75,13 @@ JS:
 ## 配合Animated.css使用
 用法1：
 
-    <transition enter-active-class="animated bounceInLeft"
-    leave-active-class="animated bounceOutRight>
+    <transition enter-active-class="animated bounceInLeft" leave-active-class="animated bounceOutRight>
          <p  v-show="show"></p>
      </transition>
      
 用法2：
 
-    <transition enter-active-class="bounceInLeft"
-    leave-active-class="bounceOutRight>
+    <transition enter-active-class="bounceInLeft" leave-active-class="bounceOutRight>
          <p  v-show="show" class="animated"></p>
      </transition>
 

@@ -88,3 +88,14 @@ JavaScript:
 区别在于可以将animated类引用在transition组件中的enter-active-class和leave-active-class属性中，
 也可以引用在元素中。
     
+ ## 内容相关——CSS中的transition属性
+ 
+transition是一个复合属性，有四个子属性构成（包括transition-property、transition-duration、transition-timing-function、transition-delay）。通过这四个子属性的配合来完成整个过渡动画。
+
+    transition-property: 过渡属性名称(默认值为all) 
+    transition-duration: 过渡持续时间(默认值为0s)
+    transiton-timing-function: 过渡函数(默认值为ease函数)
+    transition-delay: 过渡延迟时间(默认值为0s)
+
+·四个子属性中只有transition-duration是必须值，且不可以为0。
+·各个子属性通过空格隔开，而不可以使用逗号隔开。

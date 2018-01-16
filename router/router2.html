@@ -24,13 +24,22 @@
       template:"<h3>News Page Here!</h3>"
   }
   var User={
-      template:"<h3>User Page Here!</h3>"
+      template:"<div><h3>User Page Here!</h3><ul><li><router-link to='/user/username'>用户姓名</router-link></li></ul><div><router-view></router-view></div></div>"
+  }
+  var Username={
+      template:"<h3>I'm User</h3>"
   }
   //配置路由
   const routes=[
     {path:"/home",component:Home},//路径/home对应组件Home
     {path:"/news",component:News},
-    {path:"/user",component:User},
+    {
+        path:"/user",
+      component:User,
+      children:[//配置子路由
+        {path:"/user/username",component:Username}
+      ]
+    },
     {path:"*",redirect:"/home"} //将找不到对应组件的页面重定向到/home页面
   ]
   //生成路由实例

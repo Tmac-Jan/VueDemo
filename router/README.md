@@ -1,4 +1,4 @@
-# Vue2.+ Router路由
+# Vue2.X Router路由
 ## 基本使用
 HTML:
      
@@ -79,7 +79,7 @@ JavaScript:
           <h3>User Page Here!</h3>
           <ul>
             <li>
-              <router-link to='/user/ToZ/age/20'>ToZ</router-link>//链接中包含数据{username=ToZ,age=20}
+              <router-link to='/user/ToZ/age/20'>ToZ</router-link>//链接中包含数据{username：ToZ,age：20}
             </li>
             <li>
               <router-link to='/user/zijian/age/19'>zijian</router-link>
@@ -104,7 +104,7 @@ JavaScript:
         {
             path:"/user",component:User,
           children:[
-            {path:":username/age/:age",component:UserInfo} //通过路径得到{username=对应得数据，age=对应的数据}，并将数据通过url传递给组件
+            {path:":username/age/:age",component:UserInfo} //通过路径得到{username：对应得数据，age：对应的数据}，并将数据通过url传递给组件
           ]
         }
       ]

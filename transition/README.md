@@ -1,4 +1,4 @@
-# VUE2.+ transition组件
+# VUE2.X transition组件
 ## 基本用法：
 ### 单元素
     <transition>

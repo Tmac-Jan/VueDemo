@@ -1,3 +1,3 @@
 <template>
-  <h3>Home Page!</h3>
+  <h3>News Page!</h3>
 </template>
